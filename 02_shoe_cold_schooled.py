@@ -15,5 +15,3 @@ result1 = "".join([c1+c2 for c1, c2 in zip(s1, s2)])
 result2 = ""
 for n in range(len(s1)):
     result2 += s1[n] + s2[n]
-
-print(result1, result2)

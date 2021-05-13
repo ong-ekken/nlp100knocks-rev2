@@ -1,36 +1,23 @@
 #!/usr/bin/env python3
 """
-04. Atomic symbolsPermalink
+08. cipher text
 
-Split the sentence 
-“Hi He Lied Because Boron Could Not Oxidize Fluorine. 
-New Nations Might Also Sign Peace Security Clause. Arthur King Can”. 
+Implement a function cipher that converts a given string with the specification:
+Every alphabetical lowercase letter c is converted to a letter whose ASCII code 
+is (219 - [the ASCII code of c]). Keep other letters unchanged
 
-into words, and extract the first letter from the 
-1st, 5th, 6th, 7th, 8th, 9th, 15th, 16th, 19th words 
-and the first two letters from the other words. 
-Create an associative array (dictionary object or mapping object) 
-that maps from the extracted string to the position 
-(offset in the sentence) of the corresponding word.
+Use this function to cipher and decipher an English message.
 """
 
-S = ("Hi He Lied Because Boron Could Not Oxidize Fluorine."
-"New Nations Mght Also Sign Peace Security Clause. Arthur King Can" )
- 
-s = S.split()
+S = ("Crossing the causeway could cause congestions to rich chickens" )
 
-k = (1, 5, 6, 7, 8, 9, 15, 16, 19)
+def cipher(S):
+    coded = []
+    for ch in S:
+        if ch == 'c':
+            coded.append(chr(219 - ord('c')))
+        else:
+            coded.append(ch)
+    return "".join(coded)
 
-# short version
-result1 = [s[n][0] if (n+1 in k) else s[n][:2] for n in range(len(s))] 
-
-# long version
-result2 = list() 
-for n in range(len(s)):
-    if n+1 in k:
-        result2.append(s[n][0])
-    else:
-        result2.append(s[n][:2])
-
-
-print(result1, result2, sep="\n")
+print(cipher(S))
