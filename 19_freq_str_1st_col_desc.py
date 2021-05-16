@@ -8,5 +8,12 @@ strings by descending order of their frequencies.
 Confirm the result by using cut, uniq, and sort commands.
 """
 
+from collections import Counter
+
 with open('popular-names.txt') as f:
-    read_data = f.read()
+    names = Counter([row.split()[0] for row in f.readlines()])
+
+    for name, freq in names.most_common():
+        freqx = str(freq).rjust(7)
+        print(f"{freqx} {name}")   
+   

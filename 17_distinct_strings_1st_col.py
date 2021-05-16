@@ -9,4 +9,9 @@ Confirm the result by using cut, sort, and uniq commands.
 """
 
 with open('popular-names.txt') as f:
-    read_data = f.read()
+    col1 = [row.split()[0] for row in f.readlines()]
+    distinct_str = set(col1)
+    sorted_list = sorted(list(distinct_str))
+    
+    print(*sorted_list, sep='\n')
+    print(len(sorted_list))
