@@ -8,3 +8,5 @@ first column of the file.
 Confirm the result by using cut, sort, and uniq commands.
 """
 
+with open('popular-names.txt') as f:
+    read_data = f.read()

@@ -10,3 +10,20 @@ the values of the first and second columns
 Confirm the result by using paste command.
 """
 
+with open('temp1.txt') as f:
+    f = f.readlines()
+
+    with open('temp2.txt', 'r') as g:
+        g = g.readlines()
+
+    zipped = ""   
+
+    for i in range(len(f)):
+        zipped += f[i][:-1]+'\t'+g[i]
+
+    with open('temp3.txt', 'w+') as h:
+        h.write(zipped)
+
+
+
+

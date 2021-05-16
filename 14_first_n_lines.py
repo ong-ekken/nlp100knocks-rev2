@@ -8,3 +8,5 @@ argument, and output the first $N$ lines of the file.
 Confirm the result by using head command.
 """
 
+with open('popular-names.txt') as f:
+    read_data = f.read()

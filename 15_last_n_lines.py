@@ -8,3 +8,5 @@ and output the last $N$ lines of the file.
 Confirm the result by using tail command.
 """
 
+with open('popular-names.txt') as f:
+    read_data = f.read()

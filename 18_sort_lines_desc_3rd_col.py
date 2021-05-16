@@ -8,3 +8,5 @@ Sort the lines in descending numeric order of the third column
 Confirm the result by using sort command.
 """
 
+with open('popular-names.txt') as f:
+    read_data = f.read()
